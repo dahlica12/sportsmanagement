@@ -18,20 +18,42 @@ public class AthleteController {
         this.athleteService = athleteService;
     }
 
+    //@GetMapping
+    //public ResponseEntity<List<Athlete>> getAthletes() {
+      //  return new ResponseEntity<List<Athlete>>(athleteService.getAthletes(), HttpStatus.OK) ;
+
+
     @GetMapping
-    public ResponseEntity<List<Athlete>> getAthletes() {
-        return new ResponseEntity<List<Athlete>>(athleteService.getAthletes(), HttpStatus.OK) ;
+    public List<AthleteResponseModel> getAthletes() {
+        return athleteService.getAthletes();
+    }
+
+    @GetMapping("/{athleteId}")
+    public Athlete getAthleteByAthleteId(@PathVariable String athleteId){
+        return athleteService.getAthleteByAthleteId(athleteId);
     }
 
     @PostMapping()
-    public ResponseEntity<Athlete> saveAthlete(@RequestBody Athlete athlete) {
-        return new ResponseEntity<Athlete>(athleteService.saveAthlete(athlete), HttpStatus.CREATED);
+    public AthleteResponseModel saveAthlete(@RequestBody Athlete athlete) {
+       return athleteService.saveAthlete(athlete);
     }
 
-    @PostMapping("/many")
-    public ResponseEntity<List<Athlete>> saveAthletes(@RequestBody List<Athlete> athletes) {
-        return new ResponseEntity<List<Athlete>>(athleteService.saveAthletes(athletes), HttpStatus.CREATED);
+
+    @PutMapping("/{athleteId}")
+    public Athlete updateAthlete(@RequestBody Athlete athlete, @PathVariable String athleteId) {
+        return athleteService.updateAthlete(athlete, athleteId);
     }
+
+    @DeleteMapping("/{athleteId}")
+    public void removeAthlete(@PathVariable String athleteId){
+        athleteService.removeAthlete(athleteId);
+    }
+
+
+
+
+
+
 
 
 }

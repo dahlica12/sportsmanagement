@@ -5,9 +5,10 @@ package com.james.sportsmanagementws.athletemanagementsubdomain.datalayer;
 import jakarta.persistence.*;
 import lombok.Data;
 
-@Data
+
 @Entity
 @Table(name = "athlete")
+@Data
 public class Athlete {
 
     @Id
@@ -17,19 +18,31 @@ public class Athlete {
     private String firstName;
     private String lastName;
     private String emailAddress;
+    private String sportName;
+
+    private Float height;
+    private Float weight;
+    private Integer age;
+    private String gender;
 
 
     @Embedded
     private AthleteIdentifier athleteIdentifier;
 
-    public Athlete() {
+    @Embedded
+    private Stats stats;
 
+
+    @Enumerated(EnumType.STRING)
+    private Status status;
+
+    public Athlete() {
+        this.athleteIdentifier = new AthleteIdentifier();
     }
 
-    public Athlete(String firstName, String lastName, String emailAddress, AthleteIdentifier athleteIdentifier) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.emailAddress = emailAddress;
-        this.athleteIdentifier = athleteIdentifier;
+    public Athlete(Stats stats, Status status) {
+        this.athleteIdentifier = new AthleteIdentifier();
+        this.stats = stats;
+        this.status = status;
     }
 }
