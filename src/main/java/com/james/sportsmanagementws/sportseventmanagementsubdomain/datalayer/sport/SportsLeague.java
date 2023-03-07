@@ -15,18 +15,18 @@ public class SportsLeague {
     private Integer id;
 
     @Embedded
-    SportIdentifier sportIdentifier; //public id
+    private SportIdentifier sportIdentifier; //public id
 
-    private String type;
+    private String name;
 
 
     public SportsLeague(){
         this.sportIdentifier = new SportIdentifier();
     }
 
-    public SportsLeague(String type){
+    public SportsLeague(String name){
         this.sportIdentifier = new SportIdentifier();
-        this.type = type;
+        this.name = name;
     }
 
 }

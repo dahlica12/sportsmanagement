@@ -4,7 +4,7 @@ import com.james.sportsmanagementws.sportseventmanagementsubdomain.datalayer.spo
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.Date;
+import java.sql.Date;
 
 
 @Entity
@@ -17,20 +17,19 @@ public class Event {
     private Integer id;
 
     @Embedded
-    public EventIdentifier eventIdentifier;
+    private EventIdentifier eventIdentifier;
 
     @Embedded
-    public SportIdentifier sportIdentifier;
+    private SportIdentifier sportIdentifier;
 
     @Embedded
-    public Address address;
-
+    private Address address;
 
     @Enumerated(EnumType.STRING)
     private Status status;
 
     @Enumerated(EnumType.STRING)
-    private EventType type;
+    private EventType eventType;
 
     private Date date;
 
@@ -42,11 +41,11 @@ public class Event {
 
     }
 
-    public Event(EventIdentifier eventIdentifier, Address address, Status status, EventType type) {
+    public Event(EventIdentifier eventIdentifier, Address address, Status status, EventType eventType) {
         this.eventIdentifier = eventIdentifier;
         this.address = address;
         this.status = status;
-        this.type = type;
+        this.eventType = eventType;
     }
 }
 

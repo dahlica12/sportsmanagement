@@ -10,7 +10,8 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface SportLeagueResponseMapper {
 
-    @Mapping(expression = "java(sportsleague.getSportIdentifier().getSportId())", target = "sportId")
+    @Mapping(expression = "java(sportsLeague.getSportIdentifier().getSportId())", target = "sportId")
+
 
     SportResponseModel entityToResponseModel(SportsLeague sportsLeague);
 

@@ -9,6 +9,6 @@ import org.mapstruct.Mapping;
 public interface SportLeagueRequestMapper {
 
     @Mapping(target = "id", ignore = true)
-    @Mapping(target = "inventoryIdentifier", ignore = true)
+    @Mapping(target = "sportIdentifier", ignore = true)
     SportsLeague requestModelToEntity(SportRequestModel requestModel);
 }

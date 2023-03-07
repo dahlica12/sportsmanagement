@@ -10,8 +10,13 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface EventResponseMapper {
 
-    @Mapping(expression = "java(event.getEventIdentifier().getEventId())", target = "eventId")
+    @Mapping(expression = "java(event.getEventIdentifier().getEventId())", target = "eventIdentifier")
     @Mapping(expression = "java(event.getSportIdentifier().getSportId())", target = "sportId")
+    @Mapping(expression = "java(event.getAddress().getStreetAddress())", target = "streetAddress")
+    @Mapping(expression = "java(event.getAddress().getCity())", target = "city")
+    @Mapping(expression = "java(event.getAddress().getProvince())", target = "province")
+    @Mapping(expression = "java(event.getAddress().getCountry())", target = "country")
+    @Mapping(expression = "java(event.getAddress().getPostalCode())", target = "postalCode")
 
     EventResponseModel entityToResponseModel(Event event);
 

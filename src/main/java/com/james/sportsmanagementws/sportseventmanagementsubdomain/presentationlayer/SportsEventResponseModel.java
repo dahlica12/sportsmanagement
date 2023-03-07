@@ -14,6 +14,6 @@ import java.util.List;
 public class SportsEventResponseModel {
 
     private String sportId;
-    private String type;
-    private List<AthleteResponseModel> eventsComingUp;
+    private String name;
+    private List<EventResponseModel> eventsComingUp;
 }

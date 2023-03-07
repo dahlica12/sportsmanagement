@@ -5,23 +5,23 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Value;
 
-import java.util.Date;
+import java.sql.Date;
 
 @Value
 @Builder
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class EventRequestModel {
 
-    private final String eventIdentifier;
-    private final String sportId;
-    private final String eventType;
-    private final String status;
-    private final String score;
-    private final Date date;
-    private final String duration;
-    private final String streetAddress;
-    private final String city;
-    private final String province;
-    private final String country;
-    private final String postalCode;
+    private String sportId;
+    private String eventId;
+    private String eventType;
+    private String status;
+    private String score;
+    private Date date;
+    private String duration;
+    private String streetAddress;
+    private String city;
+    private String province;
+    private String country;
+    private String postalCode;
 }

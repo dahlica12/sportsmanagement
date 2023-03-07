@@ -7,14 +7,19 @@ import java.util.UUID;
 @Embeddable
 public class EventIdentifier {
 
-    private String eventIdentifier;
+    private String eventId;
 
     public EventIdentifier(){
-        this.eventIdentifier = UUID.randomUUID().toString();
+
+    }
+
+    public EventIdentifier(String eventId){
+        this.eventId = UUID.randomUUID().toString();
     }
 
     public String getEventId(){
-        return eventIdentifier;
+        return eventId;
+
     }
 }
 

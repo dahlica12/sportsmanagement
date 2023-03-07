@@ -2,20 +2,22 @@ package com.james.sportsmanagementws.sportseventmanagementsubdomain.presentation
 
 public class SportRequestModel {
 
+
+
+    String name;
+
     public SportRequestModel() {
     }
 
-    String type;
-
-    public SportRequestModel(String type) {
-        this.type = type;
+    public SportRequestModel(String name) {
+        this.name = name;
     }
 
-    public String getType() {
-        return type;
+    public String getName() {
+        return name;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setName(String name) {
+        this.name = name;
     }
 }

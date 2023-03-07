@@ -11,5 +11,5 @@ import lombok.Value;
 public class SportResponseModel {
 
     private final String sportId;
-    private final String type;
+    private final String name;
 }
