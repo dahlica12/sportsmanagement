@@ -17,7 +17,7 @@ public class EventRequestModel {
     private String eventType;
     private String status;
     private String score;
-    private Date date;
+    private String thedate;
     private String duration;
     private String streetAddress;
     private String city;

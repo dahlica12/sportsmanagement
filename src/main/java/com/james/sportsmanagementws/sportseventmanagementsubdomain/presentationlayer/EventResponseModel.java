@@ -17,7 +17,7 @@ public class EventResponseModel {
     private final String eventType;
     private final String status;
     private final String score;
-    private final Date date;
+    private final String thedate;
     private final String duration;
     private final String streetAddress;
     private final String city;

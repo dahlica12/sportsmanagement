@@ -31,7 +31,7 @@ public class Event {
     @Enumerated(EnumType.STRING)
     private EventType eventType;
 
-    private Date date;
+    private String thedate;
 
     private String score;
 
