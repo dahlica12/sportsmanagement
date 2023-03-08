@@ -15,6 +15,7 @@ public class SportsLeague {
     private Integer id;
 
     @Embedded
+    @Column(name = "sport_id")
     private SportIdentifier sportIdentifier; //public id
 
     private String name;

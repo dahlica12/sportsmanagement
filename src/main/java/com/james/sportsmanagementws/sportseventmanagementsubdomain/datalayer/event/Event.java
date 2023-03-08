@@ -17,9 +17,11 @@ public class Event {
     private Integer id;
 
     @Embedded
+    @Column(name = "event_id")
     private EventIdentifier eventIdentifier;
 
     @Embedded
+    @Column(name = "sport_id")
     private SportIdentifier sportIdentifier;
 
     @Embedded
@@ -29,6 +31,7 @@ public class Event {
     private Status status;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "event_type")
     private EventType eventType;
 
     private String thedate;

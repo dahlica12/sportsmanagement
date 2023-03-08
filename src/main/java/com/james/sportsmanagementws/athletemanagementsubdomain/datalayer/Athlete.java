@@ -7,7 +7,7 @@ import lombok.Data;
 
 
 @Entity
-@Table(name = "athlete")
+@Table(name = "athletes")
 @Data
 public class Athlete {
 
@@ -15,9 +15,17 @@ public class Athlete {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+
+    @Column(name = "first_name")
     private String firstName;
+
+    @Column(name = "last_name")
     private String lastName;
+
+    @Column(name = "email_address")
     private String emailAddress;
+
+    @Column(name = "sport_name")
     private String sportName;
 
     private Float height;
@@ -27,6 +35,7 @@ public class Athlete {
 
 
     @Embedded
+    @Column(name = "athlete_id")
     private AthleteIdentifier athleteIdentifier;
 
     @Embedded

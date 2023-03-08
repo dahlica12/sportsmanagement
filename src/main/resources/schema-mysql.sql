@@ -42,11 +42,12 @@ create table if not exists events (
     event_type VARCHAR(50),
     status VARCHAR(50),
     score VARCHAR(9),
-    thedate VARCHAR (8),
-    duration VARCHAR(50),
+    thedate VARCHAR (20),
+    duration VARCHAR (50),
     street_address VARCHAR (50),
     city VARCHAR (50),
     province VARCHAR (50),
     country VARCHAR (50),
     postal_code VARCHAR (9)
     );
+
